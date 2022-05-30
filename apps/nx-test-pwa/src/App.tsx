@@ -1,16 +1,29 @@
 import React from 'react';
+
+import { ChakraProvider } from '@chakra-ui/react';
+
 import logo from './logo.svg';
+
 import './App.css';
+import ServiceWorkerController from './controllers/ServiceWorkerController';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+  React.useEffect(() => {
+    console.log({ env: process.env.NODE_ENV });
+  }, []);
 
-        <p>Hola mundo!</p>
-      </header>
-    </div>
+  return (
+    <ChakraProvider>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+
+          <p>¡Hola mundo!</p>
+        </header>
+      </div>
+
+      <ServiceWorkerController />
+    </ChakraProvider>
   );
 }
 
