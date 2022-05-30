@@ -24,6 +24,8 @@ const ServiceWorkerController: FC = () => {
   };
 
   useEffect(() => {
+    console.log('---- Registrando SW ----');
+
     serviceWorker.register({ onUpdate: onSWUpdate });
   }, []);
 
