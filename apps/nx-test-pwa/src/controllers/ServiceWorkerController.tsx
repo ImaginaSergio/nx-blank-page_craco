@@ -39,7 +39,7 @@ const ServiceWorkerController: FC = () => {
   };
 
   return showReload ? (
-    <Alert status="info">
+    <Alert status="info" style={{ position: 'fixed', top: '0' }}>
       <AlertIcon />
 
       <Box>
