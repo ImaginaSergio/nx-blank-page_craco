@@ -22,9 +22,9 @@ function App() {
 
           <p>Prueba de SW</p>
         </header>
-      </div>
 
-      <ServiceWorkerController />
+        <ServiceWorkerController />
+      </div>
     </ChakraProvider>
   );
 }

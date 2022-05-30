@@ -17,6 +17,8 @@ const ServiceWorkerController: FC = () => {
     React.useState<ServiceWorker | null>(null);
 
   const onSWUpdate = (registration: ServiceWorkerRegistration) => {
+    console.log('---- Actualizando SW ----');
+
     setShowReload(true);
     setWaitingWorker(registration.waiting);
   };
@@ -26,14 +28,18 @@ const ServiceWorkerController: FC = () => {
   }, []);
 
   const reloadPage = () => {
+    console.log('---- Actualizando página ----');
+
     waitingWorker?.postMessage({ type: 'SKIP_WAITING' });
     setShowReload(false);
+
     window.location.reload();
   };
 
   return showReload ? (
     <Alert status="info">
       <AlertIcon />
+
       <Box>
         <AlertTitle>A new version is available!</AlertTitle>
 
