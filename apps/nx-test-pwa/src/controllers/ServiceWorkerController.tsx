@@ -12,7 +12,7 @@ import {
 import * as serviceWorker from '../serviceWorkerRegistration';
 
 const ServiceWorkerController: FC = () => {
-  const [showReload, setShowReload] = React.useState(false);
+  const [showReload, setShowReload] = React.useState(true);
   const [waitingWorker, setWaitingWorker] =
     React.useState<ServiceWorker | null>(null);
 
